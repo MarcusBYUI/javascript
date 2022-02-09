@@ -35,7 +35,7 @@ function request(url) {
             const html = data.map((list) => {
                 return `&emsp;&emsp;${list} <br> <br>`;
             });
-            document.querySelector("#output-text").value = html.join("");
+            document.querySelector("#output-text").textContent = html.join("");
 
         });
 }
