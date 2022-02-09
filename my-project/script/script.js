@@ -50,10 +50,13 @@ function copy() {
     let text = document.querySelector("#output-text").textContent;
 
     let copyText = document.createElement("input");
-    document.body.appendChild(copyText);
+    copyText.classList.add("hidden");
+
+
     copyText.value = text;
     copyText.select();
     copyText.setSelectionRange(0, 99999);
+
     navigator.clipboard
         .writeText(copyText.value)
         .then(() => {
@@ -62,7 +65,9 @@ function copy() {
         .catch(() => {
             alert("something went wrong");
         });
-    document.removeChild(copyText);
+
+
+
 }
 // on button click to generate
 document.querySelector("#generate").addEventListener("click", script);
