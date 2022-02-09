@@ -62,6 +62,7 @@ function copy() {
         .catch(() => {
             alert("something went wrong");
         });
+    document.removeChild(copyText);
 }
 // on button click to generate
 document.querySelector("#generate").addEventListener("click", script);
