@@ -43,8 +43,8 @@ function request(url) {
 function copy() {
     let text = document.querySelector("#output-text");
 
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    text.select();
+    text.setSelectionRange(0, 99999); /* For mobile devices */
 
     navigator.clipboard.writeText(text.textContent);
 
