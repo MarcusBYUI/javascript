@@ -42,14 +42,15 @@ function request(url) {
 //copy funtion
 function copy() {
     let text = document.querySelector("#output-text").textContent;
-    let copyText = document.createElement("textarea");
+    let copyText = document.createElement("input");
     document.body.appendChild(copyText);
     copyText.value = text;
     copyText.select();
+
     copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
     navigator.clipboard.writeText(copyText.value);
-
+    document.body.removeChild(copyText);
     alert("Copied !");
 }
 // on button click to generate

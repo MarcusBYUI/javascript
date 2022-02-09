@@ -3,10 +3,6 @@ body {
     background-color: palegreen;
 }
 
-textarea {
-    display: none;
-}
-
 p {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 20px;
