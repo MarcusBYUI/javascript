@@ -1,6 +1,6 @@
 function script() {
     // sets the output text to loading when a click is made so the user can know to wait
-    document.querySelector("#output-text").textContent = "Loading . . .";
+    document.querySelector("#output-text").value = "Loading . . .";
     let type = document.querySelector("#type").value;
     let number = document.querySelector(".number").value;
 
@@ -35,18 +35,20 @@ function request(url) {
             const html = data.map((list) => {
                 return `&emsp;&emsp;${list} <br> <br>`;
             });
-            document.querySelector("#output-text").innerHTML = html.join("");
+            document.querySelector("#output-text").value = html.join("");
 
         });
 }
 //copy funtion
 function copy() {
-    let text = document.querySelector("#output-text");
+    let text = document.querySelector("#output-text").textContent;
+    let copyText = document.createElement("textarea");
+    document.body.appendChild(copyText);
+    copyText.value = text;
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-    text.select();
-    text.setSelectionRange(0, 99999); /* For mobile devices */
-
-    navigator.clipboard.writeText(text.textContent);
+    navigator.clipboard.writeText(copyText.value);
 
     alert("Copied !");
 }
