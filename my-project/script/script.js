@@ -40,18 +40,28 @@ function request(url) {
         });
 }
 //copy funtion
+// function copy() {
+//     let text = document.querySelector("#output-text").textContent;
+//     navigator.clipboard.writeText(text);
+
+// }
+
 function copy() {
     let text = document.querySelector("#output-text").textContent;
+
     let copyText = document.createElement("input");
     document.body.appendChild(copyText);
     copyText.value = text;
     copyText.select();
-
-    copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-    navigator.clipboard.writeText(copyText.value);
-    document.body.removeChild(copyText);
-    alert("Copied !");
+    copyText.setSelectionRange(0, 99999);
+    navigator.clipboard
+        .writeText(copyText.value)
+        .then(() => {
+            alert("successfully copied");
+        })
+        .catch(() => {
+            alert("something went wrong");
+        });
 }
 // on button click to generate
 document.querySelector("#generate").addEventListener("click", script);

@@ -18,6 +18,10 @@ section {
     width: 90%;
 }
 
+select {
+    background-color: white;
+}
+
 .output {
     background-color: white;
     padding: 20px;
