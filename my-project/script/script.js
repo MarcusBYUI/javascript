@@ -1,6 +1,6 @@
 function script() {
     // sets the output text to loading when a click is made so the user can know to wait
-    document.querySelector("#output-text").value = "Loading . . .";
+    document.querySelector("#output-text").textContent = "Loading . . .";
     let type = document.querySelector("#type").value;
     let number = document.querySelector(".number").value;
 
@@ -50,7 +50,6 @@ function copy() {
     let text = document.querySelector("#output-text").textContent;
 
     let copyText = document.createElement("input");
-    copyText.classList.add("hidden");
 
 
     copyText.value = text;
